@@ -1,21 +1,21 @@
 #Update based on your organizational requirements##
 
 Location=westus
-ResourceGroupName=ADonAzureVMs
-NetworkSecurityGroup=NSG-DomainControllers
-VNetName=VNet-AzureVMsWestUS2
-VNetAddress=10.10.0.0/16
-SubnetName=Subnet-AzureDCsWestUS2
-SubnetAddress=10.10.10.0/24
+ResourceGroupName=Yoshi
+NetworkSecurityGroup=NSG-GalacticCivilWar
+VNetName=VNet-GalacticCivilWar
+VNetAddress=192.168.1.0/24
+SubnetName=Subnet-GalacticCivilWar
+SubnetAddress=192.168.1.0/24
 AvailabilitySet=DomainControllers
 VMSize=Standard_DS1_v2
 DataDiskSize=20
-AdminUsername=azureuser
-AdminPassword=ChangeMe123456
-DomainController1=AZDC01
-DC1IP=10.10.10.11
-DomainController2=AZDC02
-DC2IP=10.10.10.12
+AdminUsername=azureadmin
+AdminPassword=Pa55w.rd
+DomainController1=DC-GalacticCivilWar
+DC1IP=192.168.1.1
+##DomainController2=AZDC02##
+##DC2IP=10.10.10.12##
 
 # Create a resource group.
 az group create --name $ResourceGroupName \
