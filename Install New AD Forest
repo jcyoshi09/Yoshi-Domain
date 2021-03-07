@@ -1,4 +1,4 @@
-#Update based on your organizational requirements##
+##Update based on your organizational requirements##
 
 Location=westus
 ResourceGroupName=Yoshi
@@ -82,3 +82,9 @@ az vm create \
     --data-disk-caching None \
     --nsg $NetworkSecurityGroup \
     --private-ip-address $DC2IP
+
+# Install AD DS
+Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools -InstallDNS:$true
+
+# Command to see available commandlets and syntax
+Get-Command -Module ADDSDeployment
