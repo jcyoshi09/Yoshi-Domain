@@ -84,7 +84,7 @@ az vm create \
     --private-ip-address $DC2IP
 
 # Install AD DS
-Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools -InstallDNS:$true
+Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
 
 # Command to see available commandlets and syntax
 Get-Command -Module ADDSDeployment
