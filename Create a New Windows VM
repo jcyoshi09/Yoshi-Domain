@@ -1,0 +1,17 @@
+##Creates a New Windows VM##
+##PowerShell##
+New-AzVM `
+  -ResourceGroupName "Yoshi" `
+	-Name "Yoshi-Windows1" `
+	-Location "West US" `
+	-VirtualNetworkName "myVnet1" `
+	-SubnetName "mySubnet1" `
+	-SecurityGroupName "myNetworkSecurityGroup" `
+	-PublicIpAddressName "myPublicIpAddress" `
+	-OpenPorts 22,80,3389
+
+##Connect to the virtual machine##
+Get-AzPublicIpAddress -ResourceGroupName "Yoshi" | Select "IpAdress"
+
+##Create a RDP session from local computer. Input the IP address of the VM in the command##
+mstsc /v: publicIpAddress
