@@ -1,2 +1,5 @@
-###Command to remove Resource Groups##
+### Command to remove Resource Groups ##
 Remove-AzResourceGroup -Name myResourceGroup
+
+## Command to delete an AZ VM ##
+Remove-AzVM -ResourceGroupName "Yoshi" -Name "Yoshi-WIN1"
