@@ -1,5 +1,7 @@
-##Creates a New Windows VM##
-##PowerShell##
+## Creates a New Windows VM using PowerShell##
+## Variables ##
+ResourceGroupName=Yoshi
+
 New-AzVM `
   -ResourceGroupName "Yoshi" `
   -Name "Yoshi-WIN1" `
