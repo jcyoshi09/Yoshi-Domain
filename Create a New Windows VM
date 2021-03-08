@@ -2,7 +2,7 @@
 ##PowerShell##
 New-AzVM `
   -ResourceGroupName "Yoshi" `
-  -Name "Yoshi-Windows1" `
+  -Name "Yoshi-WIN1" `
   -Location "West US" `
   -VirtualNetworkName "myVnet1" `
   -SubnetName "mySubnet1" `
