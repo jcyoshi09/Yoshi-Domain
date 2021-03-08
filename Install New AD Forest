@@ -88,7 +88,7 @@ az vm create \
 Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
 
 # Promote server to Domain Controller and Install DNS
-Install-ADDSDomainController -InstallDns -Credential (Get-Credential "GCW\azureadmin") -DomainName "GalacticCivilWar.Yoshi"
+Install-ADDSForest -DomainName "GalacticCivilWar.Yoshi" -InstallDNS -DomainNetBiosName "GCW"
 
 # Command to see available commandlets and syntax
 Get-Command -Module ADDSDeployment
