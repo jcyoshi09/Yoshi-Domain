@@ -1,6 +1,13 @@
 ## Creates a New Windows VM using PowerShell##
 ## Variables ##
-ResourceGroupName=Yoshi
+$ResourceGroupName = "Yoshi"
+$NameofVM = "Yoshi-WIN1"
+$Location = "West US"
+$VirtualNetworkName = "Vnet-GalacticCivilWar"
+$SubnetName = "GalacticCivilWar"
+$SecurityGroupName = "NSG-GalacticCivilWar"
+$PublicIpAddressName = "myPublicIpAddress"
+$OpenPorts = "22,80,3389"
 
 New-AzVM `
   -ResourceGroupName "Yoshi" `
