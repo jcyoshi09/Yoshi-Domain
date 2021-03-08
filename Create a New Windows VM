@@ -10,14 +10,14 @@ $PublicIpAddressName = "myPublicIpAddress"
 $OpenPorts = "22,80,3389"
 
 New-AzVM `
-  -ResourceGroupName "Yoshi" `
-  -Name "Yoshi-WIN1" `
-  -Location "West US" `
+  -ResourceGroupName $ResourceGroupName `
+  -Name $NameofVM `
+  -Location $Location `
   -VirtualNetworkName "myVnet1" `
-  -SubnetName "mySubnet1" `
-  -SecurityGroupName "myNetworkSecurityGroup" `
-  -PublicIpAddressName "myPublicIpAddress" `
-  -OpenPorts 22,80,3389
+  -SubnetName $VirtualNetworkName `
+  -SecurityGroupName $SecurityGroupName `
+  -PublicIpAddressName $PublicIpAddressName `
+  -OpenPorts $OpenPorts
 
 ##Connect to the virtual machine##
 Get-AzPublicIpAddress -ResourceGroupName "Yoshi" | Select "IpAdress"
