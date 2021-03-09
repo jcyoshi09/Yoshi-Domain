@@ -7,4 +7,4 @@ Stop-AzVm -ResourceGroupName "Yoshi" -Name "Yoshi-WIN1" -nowait
 ## Command to delete an AZ VM and associated resources##
 Remove-AzVM -ResourceGroupName "Yoshi" -Name "Yoshi-WIN1" `
 Remove-AzNetworkInterface -ResourceGroupName "Yoshi" -Name "Yoshi-WIN1" `
-Remove-Azdisk -ResourceGroupName "Yoshi" -DiskName "Yoshi-WIN1"
+Remove-Azdisk -ResourceGroupName "Yoshi" -DiskName "Yoshi-WIN1*"
