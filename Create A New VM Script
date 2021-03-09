@@ -1,0 +1,58 @@
+## Script to automate creating a VM on Azure ##
+
+# Retrieve the plain text password for use with `Get-Credential` in the next command.
+# $sp.secret | ConvertFrom-SecureString -AsPlainText
+
+# $pscredential = Get-Credential -UserName $sp.ApplicationId
+# Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant $tenantId
+
+Connect-AzAccount
+
+## Introduction ##
+
+cls
+Write-Host "Welcome to Yoshi's Guided VM Creation Script"
+Write-Host ""
+start-sleep 3
+Write-Host "I am going to ask you for some of your organizational requirements. Please have the information ready."
+start-sleep 3
+
+## Main Body ##
+
+cls 
+
+$ResourceGroupName = Read-Host "What is the name of the Resource Group you want this VM to be associated with?"
+
+$NameofVM = Read-Host "What is the name of the VM you want to create?"
+
+$Location = Read-Host "What location do you want to use? (West US or East US)"
+
+$VirtualNetworkName = Read-Host "What is the name of the virtual network you want this VM to be on?"
+
+$SubnetName = Read-Host "What is the name of the subnet you want this VM to be on?"
+
+$SecurityGroupName = Read-Host "What Security Group do you want this VM to be associated with?"
+
+$OpenPorts = Read-Host "What ports do you want open to access this VM? (22 or 3389)"
+
+## Creation ##
+
+New-AzVM `
+  -ResourceGroupName $ResourceGroupName `
+  -Name $NameofVM `
+  -Location $Location `
+  -VirtualNetworkName $VirtualNetworkName `
+  -SubnetName $SubnetName `
+  -SecurityGroupName $SecurityGroupName `
+  -PublicIpAddressName $PublicIpAddressName `
+  -OpenPorts $OpenPorts
+
+## Clean-Up ##
+
+$Clean = Read-Host "Do you want me to clean up the resources you just created? (Yes or No)"
+if ( $Clean -match "Yes" )
+    {
+    Remove-ResourceGroup -Name $ResourceGroupName
+    }
+
+Write-Host "Thank you for using my script"
