@@ -1,0 +1,5 @@
+## Install AD DS ##
+Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
+
+# Promote server to Domain Controller and Install DNS ##
+Install-ADDSForest -DomainName "GalacticCivilWar.Yoshi" -InstallDNS -DomainNetBiosName "GCW"
