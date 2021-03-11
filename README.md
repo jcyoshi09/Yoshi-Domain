@@ -1,5 +1,6 @@
-# Yoshi-Domain
+## Yoshi-Domain ##
 ## This will be the first notes I make regarding my Azure-based domain called "Yoshi-Domain" ##
+
 Step-by-Step Process
 
 -Create a VM
@@ -8,6 +9,7 @@ Step-by-Step Process
 -Join other VMs to the same domain
   - 1 Windows VM
   - 1 RHEL VM
+- Automate start/stop schedule for VMs
 - Create other domains (Republic and Resistance)
 - Install AD CS
 - Establish a domain trust between all 3
