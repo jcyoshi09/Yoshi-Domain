@@ -1,0 +1,12 @@
+## Add a Computer to the Domain ##
+
+## Need to set the DNS Server Address on the appropriate Interface Index first ##
+## Get-NetIPInterface (Runs the command to show interfaces that are available on this machine ##
+
+Set-DnsClientServerAddress -InterfaceIndex 1 -ServerAddresses "192.168.1.4"
+
+## After the DNS server is set to the interface, you can then join it to the domain ##
+
+Add-Computer -DomainName "GalacticCivilWar.Yoshi" -restart
+
+## If you want to specific it to a certain OU, use "OU=Empire,DC=GalacticCivilWar,DC=Yoshi"
