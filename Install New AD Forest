@@ -12,7 +12,7 @@ AvailabilitySet=DomainControllers
 VMSize=Standard_DS1_v2
 DataDiskSize=20
 AdminUsername=azureadmin
-AdminPassword=Pa55w.rd12345
+AdminPassword=Pa55w.rd
 DomainController1=DC-GalacticCivilWar
 DC1IP=192.168.1.1
 ##DomainController2=AZDC02##
@@ -83,12 +83,6 @@ az vm create \
     --data-disk-caching None \
     --nsg $NetworkSecurityGroup \
     --private-ip-address $DC2IP
-
-# Install AD DS
-Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
-
-# Promote server to Domain Controller and Install DNS
-Install-ADDSForest -DomainName "GalacticCivilWar.Yoshi" -InstallDNS -DomainNetBiosName "GCW"
 
 # Command to see available commandlets and syntax
 Get-Command -Module ADDSDeployment
