@@ -8,3 +8,18 @@ Stop-AzVm -ResourceGroupName "Yoshi" -Name "Yoshi-WIN1" -nowait
 Remove-AzVM -ResourceGroupName "Yoshi" -Name "Yoshi-WIN1" `
 Remove-AzNetworkInterface -ResourceGroupName "Yoshi" -Name "Yoshi-WIN1" `
 Remove-Azdisk -ResourceGroupName "Yoshi" -DiskName "Yoshi-WIN1*"
+
+#Start Azure VMs
+$ResourceGroupName = "Yoshi"
+Get-AzVM -ResourceGroupName $ResourceGroupName | Select Name | ForEach-Object `
+  { Start-AzVM -ResourceGroupName $ResourceGroupName -Name $_.Name }
+ 
+#Stop Azure VMs
+$ResourceGroupName = "Yoshi"
+Get-AzVM -ResourceGroupName $ResourceGroupName | Select Name | ForEach-Object `
+  { Stop-AzVM -ResourceGroupName $ResourceGroupName -Name $_.Name }
+ 
+#Restart Azure VMs
+$ResourceGroupName = "Yoshi"
+Get-AzVM -ResourceGroupName $ResourceGroupName | Select Name | ForEach-Object `
+  { Restart-AzVM -ResourceGroupName $ResourceGroupName -Name $_.Name }
