@@ -22,4 +22,3 @@ Get-AzVM -ResourceGroupName $ResourceGroupName | Select Name | ForEach-Object `
 ## Restart Azure VMs ##
 $ResourceGroupName = "Yoshi"
 Get-AzVM -ResourceGroupName $ResourceGroupName | Select Name | ForEach-Object `
-  { Restart-AzVM -ResourceGroupName $ResourceGroupName -Name $_.Name }
