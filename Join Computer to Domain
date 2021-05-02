@@ -8,3 +8,5 @@ Set-DnsClientServerAddress -InterfaceIndex 1 -ServerAddresses "192.168.1.4"
 ## After the DNS server is set to the interface, you can then join it to the domain ##
 
 Add-Computer -DomainName "GalacticCivilWar.Yoshi" -restart
+
+## If you want to specific it to a certain OU, use -OUPath "OU=Empire,DC=GalacticCivilWar,DC=Yoshi"
