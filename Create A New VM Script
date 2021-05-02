@@ -54,3 +54,5 @@ if ( $Clean -match "Yes" )
     {
     Remove-ResourceGroup -Name $ResourceGroupName
     }
+
+Write-Host "Thank you for using my script"
